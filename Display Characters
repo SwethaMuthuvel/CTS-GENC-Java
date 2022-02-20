@@ -1,0 +1,19 @@
+import java.util.*;
+public class AsciValue{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the digits:");
+        int a=sc.nextInt();
+        char aV=(char)a;
+        int b=sc.nextInt();
+        char bV=(char)b;
+        int c=sc.nextInt();
+        char cV=(char)c;
+        int d=sc.nextInt();
+        char dV=(char)d;
+        System.out.println(a+"-"+aV);
+        System.out.println(b+"-"+bV);
+        System.out.println(c+"-"+cV);
+        System.out.println(d+"-"+dV);
+    }
+}
