@@ -1,0 +1,65 @@
+import java.util.*;
+public class CinemaTicket{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        //ticket
+        System.out.println("Enter the no of ticket:");
+        int tick=sc.nextInt();
+        validTicket(tick);
+        //refreshment
+        System.out.println("Do you want refreshment:");
+        char ref=sc.next().charAt(0);
+        validRef(ref);
+        //coupon
+        System.out.println("Do you have coupon code:");
+        char cou=sc.next().charAt(0);
+        validCou(cou);
+        //circle
+        System.out.println("Enter the circle:");
+        char cir=sc.next().charAt(0);
+        validCir(cir);
+        //calc
+        double amt=0;
+        if(cir=='k'){
+            amt=tick*75;
+        }
+        else{
+            amt=tick*150;
+        }
+        if(tick>20){
+            amt=0.9*amt;
+        }
+        if(cou=='y'){
+            amt=0.98*amt;
+        }
+        if(ref=='y'){
+            amt=amt+(tick*50);
+        }
+        System.out.print("Ticket cost:");
+        System.out.println(String.format("%.2f",amt));
+    }
+    public static void validTicket(int tick){
+        if(tick<5 || tick>40){
+            System.out.println("Minimum of 5 and Maximum of 40 Tickets");
+            System.exit(0);
+        }
+    }
+    public static void validRef(char ref){
+        if(ref!='y' && ref!='n'){
+            System.out.println("Invalid Input");
+            System.exit(0);
+        }
+    }
+    public static void validCou(char cou){
+        if(cou!='y' && cou!='n'){
+            System.out.println("Invalid Input");
+            System.exit(0);
+        }
+    }
+    public static void validCir(char cir){
+        if(cir!='k' && cir!='q'){
+            System.out.println("Invalid Input");
+            System.exit(0);
+        }
+    }
+}
