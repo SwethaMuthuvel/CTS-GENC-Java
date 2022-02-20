@@ -1,0 +1,19 @@
+import java.util.*;
+public class Customer{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter your name:");
+        String s=sc.nextLine();
+        System.out.println("Enter age:");
+        int age=sc.nextInt();
+        sc.nextLine();
+        System.out.println("Enter gender:");
+        String gen=sc.nextLine();
+        System.out.println("Hailing from:");
+        String loc=sc.nextLine();
+        System.out.println("Welcome, "+s+"!");
+        System.out.println("Age:"+age);
+        System.out.println("Gender:"+gen);
+        System.out.println("City:"+loc);
+    }
+}
