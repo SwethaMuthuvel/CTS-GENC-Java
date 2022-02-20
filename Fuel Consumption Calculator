@@ -1,0 +1,35 @@
+import java.util.*;
+public class Main{
+  public static void main(String args[]){
+	      Scanner sc=new Scanner (System.in);
+	      System.out.println("Enter the no of liters to fill the tank");
+	      double lit=sc.nextInt();
+	      test(lit);
+	      System.out.println("Enter the distance covered");
+	      double km=sc.nextInt();
+	      test(km);
+	        double mil= ConvertToMiles(km);
+	        double gal= ConvertToGal(lit);
+	        System.out.println("Liters/100KM");
+	        double res=lit/(km/100);
+	        System.out.println(String.format("%.2f",res));
+	        System.out.println("Miles/gallons");
+	        res=mil/gal;
+	        System.out.println(String.format("%.2f",res));
+	  }
+	  public static void test(double val){
+	      if(val<=0){
+	          System.out.println((int)val+" is an Invalid Input");
+	          System.exit(0);
+	      }
+	  }
+	  public static double ConvertToMiles(double km){
+	      double res=km*0.6214;
+	      return res;
+	  }
+	  public static double ConvertToGal(double lit){
+	      double res=lit*0.2642;
+	      return res;
+	  }
+	  
+}
