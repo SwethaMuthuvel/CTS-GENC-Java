@@ -1,0 +1,40 @@
+import java.util.*;
+public class OccurrenceOfChar{
+    public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter a word:");
+        String s=sc.nextLine();
+        check1(s);
+        System.out.println("Enter the character:");
+        String key=sc.nextLine();
+        check2(key);
+        int check=0;
+        for(int i=0;i<s.length();i++) {
+        	if(String.valueOf(s.charAt(i)).equals(key)) {
+        		check++;
+        	}
+        }
+        if(check>0) {
+        	System.out.println("No of '"+key+"' present in the given word is "+check); 
+        }
+        else {
+        	System.out.println("The given character '"+key+"' not present in the given word."); 
+        }
+   }
+	public static void check1(String m) {
+		for(int i=0;i<m.length();i++) {
+			if( !( (m.charAt(i)>=65 && m.charAt(i)<=90) || (m.charAt(i)>=97 && m.charAt(i)<=122) ) ) {
+				System.out.println("Not a valid string");
+				System.exit(0);
+			}
+		}
+	}
+	public static void check2(String m) {
+		for(int i=0;i<m.length();i++) {
+			if( !( (m.charAt(i)>=65 && m.charAt(i)<=90) || (m.charAt(i)>=97 && m.charAt(i)<=122) ) ) {
+				System.out.println("Given character is not an alphabet");
+				System.exit(0);
+			}
+		}
+	}
+}
