@@ -1,0 +1,47 @@
+import java.util.*;
+public class BikeRace{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the distance travelled");
+        int d=sc.nextInt();
+        if(d<0){
+            System.out.println("Invalid Input");
+            System.exit(0);
+        }
+        int res=0;
+        String s=String.valueOf(d);
+        int len=s.length();
+        int arr[]=new int[len];
+        for(int i=0;i<len;i++){
+            arr[i]= Integer.parseInt(String.valueOf(s.charAt(i)));
+        }
+        if(d==0){
+            res=0;
+        }
+        else{
+            int eprod=even(arr);
+            int oprod=odd(arr);
+            if(eprod==oprod){
+                res=2*oprod;
+            }
+            else{
+                res=Math.max(eprod,oprod);
+            }
+        }
+        System.out.println("Your bonus points is "+res);
+    }
+    public static int odd(int arr[]){
+        int p=1;
+        for(int i=0;i<arr.length;i=i+2){
+            p=p*arr[i];
+        }
+        return p;
+    }
+    public static int even(int arr[]){
+        int p=1;
+        for(int i=1;i<arr.length;i=i+2){
+            p=p*arr[i];
+        }
+        return p;
+    }
+}
