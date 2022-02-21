@@ -1,0 +1,40 @@
+import java.util.*;
+public class PanCard{
+    public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter the PAN no:");
+        String s=sc.nextLine();
+        if(s.length()!=10) {
+        	System.out.println("Invalid PAN no");
+        }
+        else {
+        	//first check
+        	String m=s.substring(0,5);
+        	check1(m);
+        	//second check
+        	String n=s.substring(5,9);
+        	check2(n);
+        	//third check
+        	String o=s.substring(9,10);
+        	check1(o);
+        	System.out.println("Valid PAN no");
+        }
+    }
+	public static void check1(String m) {
+		for(int i=0;i<m.length();i++) {
+			if(!(m.charAt(i)>=65 && m.charAt(i)<=91)) {
+				System.out.println("Invalid PAN no");
+				System.exit(0);
+			}
+		}
+	}
+	public static void check2(String n) {
+		for(int i=0;i<n.length();i++) {
+			int num=Integer.parseInt(String.valueOf(n.charAt(i)));
+			if(!(num>=0 && num<=9)) {
+				System.out.println("Invalid PAN no");
+				System.exit(0);
+			}
+		}
+	}
+}
