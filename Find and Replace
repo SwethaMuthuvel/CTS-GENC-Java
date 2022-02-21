@@ -1,0 +1,40 @@
+import java.util.*;
+public class ReplaceWord{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the string:");
+        String s=sc.nextLine();
+        int len=s.length();
+        boolean dotpres=false;
+        if(s.charAt(len-1)=='.') {
+        	s=s.substring(0,len-1);
+        	dotpres=true;
+        }
+        String a[]=s.split(" ");
+        System.out.println("Enter the word to be searched:");
+        String search=sc.nextLine();
+        System.out.println("Enter the word to be replaced:");
+        String rep=sc.nextLine();
+        boolean ch=false;
+        for(int i=0;i<a.length;i++) {
+        	if(search.equals(a[i])) {
+        		a[i]=rep;
+        		ch=true;
+        	}
+        }
+        String res="";
+        if(ch==false) {
+        	System.out.println("The word "+search+" not found");
+        }
+        else {
+        	res=a[0];
+        	for(int i=1;i<a.length;i++) {
+        		res=res+" "+a[i];
+        	}
+        	if(dotpres==true) {
+        		res=res+".";
+        	}
+        	System.out.println(res);
+        }
+   }
+}
