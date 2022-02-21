@@ -22,7 +22,7 @@ public class PanCard{
     }
 	public static void check1(String m) {
 		for(int i=0;i<m.length();i++) {
-			if(!(m.charAt(i)>=65 && m.charAt(i)<=91)) {
+			if(!(m.charAt(i)>=65 && m.charAt(i)<=90)) {
 				System.out.println("Invalid PAN no");
 				System.exit(0);
 			}
