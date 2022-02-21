@@ -1,0 +1,40 @@
+import java.util.*;
+public class LuckyNum{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the car no:");
+        int n=sc.nextInt();
+        valid1(n);
+        valid2(n);
+        int sum=getSum(n);
+        if(sum%3==0 || sum%5==0 || sum%7==0){
+            System.out.println("Lucky Number");
+        }
+        else{
+            System.out.println("Sorry its not my lucky number");
+        }
+    }
+    public static int getSum(int n){
+        int sum=0;
+        while(n!=0){
+            int rem=n%10;
+            sum=sum+rem;
+            n=n/10;
+        }
+        return sum;
+    }
+    public static void valid1(int n){
+        if(n<=0){
+            System.out.println(n+" is not a valid car number");
+            System.exit(0);
+        }
+    }
+    public static void valid2(int n){
+        String s=String.valueOf(n);
+        int len=s.length();
+        if(len!=4){
+            System.out.println(n+" is not a valid car number");
+            System.exit(0);
+        }
+    }
+}
