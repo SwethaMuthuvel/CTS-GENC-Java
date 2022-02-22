@@ -1,0 +1,32 @@
+import java.util.*;
+public class InitCap{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the String:");
+        String s=sc.nextLine();
+        String a[]=s.split(" ");
+        int len=a.length;
+        boolean alt=false;
+        for(int i=0;i<len;i++) {
+        	char c=a[i].charAt(0);
+        	boolean c1=(c>=65 && c<=90);
+        	if(c1==false) {
+        		alt=true;
+        		c=(char)(c-32);
+        		s=c+a[i].substring(1);
+        		a[i]=s;
+        	}
+        }
+        if(alt==false) {
+        	System.out.println("First character of each word is already in uppercase");
+        }
+        else {
+        	StringBuilder sb= new StringBuilder();
+        	for(int i=0;i<len;i++) {
+        		sb.append(a[i]);
+        		sb.append(" ");
+        	}
+        	System.out.println(sb);
+        }
+    }
+}
