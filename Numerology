@@ -1,0 +1,34 @@
+import java.util.*;
+public class Numerology{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter your name: ");
+        String s=sc.nextLine();
+        valid(s);
+        int len=s.length();
+        int a[]={1,2,3,4,5,8,3,5,1,1,2,3,4,5,7,8,1,2,3,4,6,6,6,5,1,7};
+        HashMap<Character,Integer> map=new HashMap<>();
+        for(int i=0;i<26;i++) {
+        	char c=(char)(65+i);
+        	map.put(c, a[i]);
+        }
+        int sum=0;
+        for(int i=0;i<len;i++) {
+        	int value=map.get(s.charAt(i));
+        	sum=sum+value;
+        }
+        System.out.println("Your numerology no is:");
+        System.out.println(sum);
+    }
+	public static void valid(String s) {
+		int len=s.length();
+		for(int i=0;i<len;i++) {
+			char c=s.charAt(i);
+			boolean c1=(c>=65 && c<=90);
+			if(c1==false) {
+				System.out.println("Invalid name");
+				System.exit(0);
+			}
+		}
+	}
+}
