@@ -1,0 +1,42 @@
+import java.util.*;
+public class HighestMarkPerSem{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter no of semester:");
+        int num_sem=sc.nextInt();
+        int a[]=new int[num_sem];
+        //get number of sub per sem
+        for(int i=1;i<=num_sem;i++){
+            System.out.println("Enter no of subjects in "+i+" semester:");
+            int num_sub=sc.nextInt();
+            a[i-1]=num_sub;
+        }
+        //array for storing the highest mark
+        int maximum[]=new int[num_sem];
+        //get marks for each sem
+        for(int i=0;i<a.length;i++){
+            int sem=i+1;
+            int num_sub=a[i];
+            System.out.println("Marks obtained in semester "+sem+":");
+            int max=Integer.MIN_VALUE;
+            for(int j=0;j<num_sub;j++){
+                int mark=sc.nextInt();
+                valid(mark);
+                max=Math.max(max,mark);
+            }
+            maximum[i]=max;
+        }
+        //printing result
+        for(int i=0;i<num_sem;i++){
+            int sem=i+1;
+            System.out.print("Maximum mark in "+sem+" semester:");
+            System.out.println(maximum[i]);
+        }
+    }
+    public static void valid(int mark){
+        if(mark<0 || mark>100){
+            System.out.println("You have entered invalid mark.");
+            System.exit(0);
+        }
+    }
+}
