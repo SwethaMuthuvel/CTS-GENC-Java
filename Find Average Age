@@ -1,0 +1,26 @@
+import java.util.*;
+public class Test{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter total no.of employees:");
+        int n=sc.nextInt();
+        if(n<2){
+            System.out.println("Please enter a valid employee count");
+            System.exit(0);
+        }
+        System.out.println("Enter the age for "+n+" employees:");
+        int sum=0;
+        for(int i=0;i<n;i++){
+            int age=sc.nextInt();
+            if(age>=28 && age<=40){
+                sum=sum+age;
+            }
+            else{
+                System.out.println("Invalid age encountered!");
+                System.exit(0);
+            }
+        }
+        double avg=(double)sum/n;
+        System.out.println("The average age is "+String.format("%.2f",avg));
+    }
+}
