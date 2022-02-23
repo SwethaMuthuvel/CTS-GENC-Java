@@ -1,0 +1,18 @@
+import java.util.regex.*;
+import java.util.Scanner;
+class UserMain{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter your ID");
+        String s=sc.nextLine();
+        Pattern p=Pattern.compile("GBL/\\d{3}/\\d{4}$");
+        Matcher m=p.matcher(s);
+        if(m.matches()){
+            System.out.println("Login success");
+        }
+        else{
+            System.out.println("Incorrect ID");
+        }
+        
+    }
+}
